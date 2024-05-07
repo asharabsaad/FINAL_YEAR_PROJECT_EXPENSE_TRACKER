@@ -83,11 +83,11 @@ export default function EditExpense() {
                 <select name="category" id="category" value={expense.category} 
                 onChange={onChangeHandler} className='px-8 py-1 bg-input rounded-sm text-gray-500 font-medium  placeholder:text-current' 
                 >
-                    <option value="books">Books</option>
-                    <option value="health">Health</option>
-                    <option value="electronics">Electronics</option>
-                    <option value="travels">Travels</option>
-                    <option value="education">Education</option>
+                    <option value="Select Category">Select Category</option>
+                    <option value="Need">Need</option>
+                    <option value="Want">Want</option>
+                    <option value="Investment">Investment</option>
+                    
                 </select>
             </div>
             <div className='flex flex-col'>
