@@ -100,3 +100,26 @@ input, select {
     justify-content: space-between; /* Adjust how to distribute extra space*/
   }
 }
+
+@media (max-width: 768px) {  /* Targets screens less than 768px wide (common phone breakpoint) */
+  .h-16 {  /* Target the top bar class */
+    height: auto;  /* Allow the height to adjust to content */
+  }
+  .text-5xl {  /* Target the heading class */
+    font-size: 1.5rem;  /* Reduce heading size on phones */
+      
+  }
+  .p-20 {  /* Target the padding class */
+    padding: 30px;  /* Reduce padding on phones */
+  }
+}
+@media (max-width: 640px) { 
+  .px-12 {
+    padding-left: 1rem; 
+    padding-right: 1rem; 
+  }
+
+  .text-2xl {
+    font-size: 1.5xl; 
+  } 
+}

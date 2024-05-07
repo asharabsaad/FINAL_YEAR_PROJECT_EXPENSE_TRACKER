@@ -1,18 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 import useLogin from '../Hooks/useLogin'
+import { Link } from 'react-router-dom'
 import {Button} from '@/Components/ui/button'
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-  } from "@/components/ui/card"
-
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 
 export default function Login() {
     const [email, setEmail] = useState('')
@@ -26,7 +16,10 @@ export default function Login() {
 
   return (
     <div >
-        <h1 className='font-bold text-2xl text-gray-800'>Expense Tracker App</h1>
+        <div className=' bg-slate-500 h-16 flex justify-center items-center px-4 p-20' >
+        <h1 className='text-5xl font-bold dark:text-white '>Expense Tracker App</h1>
+        </div>
+        
         <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-md'>
             <div className='flex flex-col gap-3 justify-center items-center px-12 py-8'>
                 <h2 className='text-2xl font-semibold'>Login</h2>
@@ -49,7 +42,8 @@ export default function Login() {
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder='Password' />
                     </div>
-                    <input type="submit" disabled={loading} value="Login" className='bg-green-500 text-white rounded-sm px-3 py-2 hover:bg-green-600 hover:cursor-pointer' />
+                    <input type="submit" disabled={loading} value="Login" className='bg-red-500 text-white rounded-sm px-3 py-2 hover:bg-blue-600 hover:cursor-pointer' />
+                    <p>Don't have a account? <Link to={'/register'} className='font-bold hover:cursor-pointer'>Create one</Link></p>
                     <div>
                         {error}
                     </div>

@@ -1,4 +1,13 @@
 import React from 'react'
+import {
+    Table,
+    TableBody,
+    TableCaption,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+  } from "@/components/ui/table"
 
 export default function TotalExpense({ expense }) {
 
@@ -7,30 +16,22 @@ export default function TotalExpense({ expense }) {
     const investmentExpense = expense.filter(item => item.category === 'investment').reduce((total, filterExpense) => total + filterExpense.amount, 0)
 
     return (
-        <div className='w-full col-span-4'>
-            <h1 className='font-semibold text-2xl'>Total Expense</h1>
-            <table className=' rounded-md mt-6 border border-black  overflow-x-auto'>
-                <thead className='text-gray-700 border border-black' >
-                    <tr>
-                        <th className='font-semibold py-3 '>Category</th>
-                        <th>Amount</th>
-                    </tr>
-                </thead>
-                <tbody className='border border-black'>
-                    <tr className='border border-black'>
-                        <td>Want</td>
-                        <td>{wantExpense}</td>
-                    </tr>
-                    <tr className='border border-black'>
-                        <td>Need</td>
-                        <td>{needExpense}</td>
-                    </tr>
-                    <tr className='border border-black'>
-                        <td>Investment</td>
-                        <td>{investmentExpense}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <Table >
+            <TableHead >Total Expense</TableHead>
+            <TableBody>
+                <TableRow>
+                    <TableCell>Want</TableCell>
+                    <TableCell>INR {wantExpense}</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>Need</TableCell>
+                    <TableCell>INR {needExpense}</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>Investment</TableCell>
+                    <TableCell>INR {investmentExpense}</TableCell>
+                </TableRow>
+            </TableBody>
+        </Table>
     )
 }
