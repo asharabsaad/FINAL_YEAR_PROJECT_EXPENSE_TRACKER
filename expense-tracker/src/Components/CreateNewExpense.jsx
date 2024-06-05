@@ -15,6 +15,7 @@ export default function CreateNewExpense({ toggle }) {
   const initialExpense = {
     name: "",
     description: "",
+    category: "",
     date: "",
     amount: "",
   };
@@ -25,7 +26,7 @@ export default function CreateNewExpense({ toggle }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { name, category, date, amount } = expense;
+    const { name, description,category, date, amount } = expense;
     const { email } = user;
     console.log(email);
 
@@ -35,7 +36,7 @@ export default function CreateNewExpense({ toggle }) {
         Authorization: `Bearer ${user}`,
       },
       method: "POST",
-      body: JSON.stringify({ name, category, date, amount }),
+      body: JSON.stringify({ name,description, category, date, amount }),
     });
     const json = await responses.json();
 

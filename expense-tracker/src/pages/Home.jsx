@@ -124,21 +124,22 @@ export default function Home() {
                     </div>
                     
                         <Table className='w-full rounded-md mt-6 border overflow-x-auto col-span-9'>
-                            <thead className='text-gray-700'>
-                                <TableRow className='w-full bg-gray-300 border border-black'>
+                            
+                                <TableRow >
                                     <TableHead >Name</TableHead>
+                                    <TableHead >Description</TableHead>
                                     <TableHead >Category</TableHead>
                                     <TableHead >Date of Expense</TableHead>
                                     <TableHead >Amount</TableHead>
                                     <TableHead >Updated At</TableHead>
                                     <TableHead >{" "}</TableHead>
                                 </TableRow>
-                            </thead>
-                            <tbody >
+                            
+                            <TableBody >
                                 {filteredExpense.map((item) => {
                                     return <ExpenseItem item={item} key={item._id} />
                                 })}
-                            </tbody>
+                            </TableBody>
                         </Table>
                         <TotalExpense expense={expense} />
 

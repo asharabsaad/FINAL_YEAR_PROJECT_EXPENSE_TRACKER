@@ -53,6 +53,7 @@ export default function ExpenseItem({ item }) {
     <>
       <tr className='border border-black '>
         <td className='border border-black text-center py-2 capitalize'>{item.name}</td>
+        <td className='border border-black text-center py-2 capitalize'>{item.description}</td>
         <td className='border border-black text-center py-2 capitalize'>{item.category}</td>
         <td className='border border-black text-center py-2 capitalize'>{formattedDate}</td>
         <td className='border border-black text-center py-2 capitalize before:content-["INR"] before:mr-1'>{item.amount}</td>

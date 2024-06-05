@@ -21,13 +21,16 @@ const getExpenseItem = async (req, res) => {
 }
 
 const createExpenseItem = async (req, res) => {
-  const { name, category, date, amount } = req.body
-  console.log({ name, category, date, amount })
+  const { name, description, category, date, amount } = req.body
+  console.log({ name, description, category, date, amount })
 
   let emptyFields = []
 
   if (!name) {
     emptyFields.push('name')
+  }
+  if(!description){
+    emptyFields.push('description')
   }
   if (!category) {
     emptyFields.push('category')
@@ -47,7 +50,7 @@ const createExpenseItem = async (req, res) => {
 
   // add doc to db
   try {
-    const expenseListItem = await ExpenseList.create({ name, category, date, amount, user_id })
+    const expenseListItem = await ExpenseList.create({ name, description, category, date, amount, user_id })
     res.status(200).json(expenseListItem)
   } catch (error) {
     res.status(400).json({ error: error.message })
